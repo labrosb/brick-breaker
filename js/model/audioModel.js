@@ -1,0 +1,7 @@
+function AudioModel() {
+	
+}
+
+AudioModel.prototype = {
+	
+};
