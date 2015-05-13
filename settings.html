@@ -65,19 +65,16 @@
                 <div class="col-md-4 text-right">
                     <label for="audio">Choose track:</label>
                     <select id="audio">
-                        <option value="charlie.mp3" selected="selected">Charlie</option>
-                        <option value="stanley.mp3">Stanley</option>
-                        <option value="stellar.mp3">Stellar</option>
                     </select>
                 </div>
                 <div class="col-md-4 text-center">
-                    <audio id="audioPlayer" src="media/stellar.mp3" controls>
+                    <audio id="audioPlayer" controls>
                         <p>Your browser does not support this feature !!</p>
                     </audio>
                 </div>
                 <div class="col-md-4 text-left">
                     <label for="audioFlag">Disable music:</label>
-                    <input id="audioFlag" type="checkbox" name="audioFlag" value="0">
+                    <input id="audioFlag" type="checkbox" name="audioFlag">
                 </div>
             </div>
         </div>
@@ -107,10 +104,10 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <!-- Custom JavaScript -->
+    <script src="js/helper/event.js"></script>
     <script src="js/view/audioView.js"></script>
     <script src="js/model/audioModel.js"></script>
     <script src="js/controller.js"></script>
     <script src="js/settings.js"></script>
-
     </body>
 </html>    
