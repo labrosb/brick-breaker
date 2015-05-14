@@ -32,7 +32,7 @@ Initialization.prototype = {
 	//
 	setInitVolumeLevel: function() {
 		var _this=this;
-		if(localStorage.getItem('volume')==null) {
+		if(localStorage.getItem('audioFlag')==null || localStorage.getItem('trackName')==null) {
 			localStorage.setItem('volume',_this.getInitVolumeLevel());
 		}
 	},

@@ -18,7 +18,8 @@ function AudioView(elements) {
 	};
 	// Change disable music check flag 
 	this._elements.audioFlag.click(function (e) {
-		localStorage.setItem('audioFlag', _this.getAudioFlag());	
+		localStorage.setItem('audioFlag', _this.getAudioFlag());
+		_this.displayAudio(localStorage.getItem('audioFlag'));
 	});
 }
 
@@ -60,11 +61,30 @@ AudioView.prototype = {
 	},
 	//
 	setAudioFlag: function(flag) {
-		this._elements.audioFlag[0].checked=flag;
+		if (flag=='false') {
+			this._elements.audioFlag[0].checked=false;	
+		}
+		else {
+			this._elements.audioFlag[0].checked=true;		
+		}
 	},
 	//
 	getAudioFlag: function() {
-		//return this._elements.audioFlag[0].value;
 		return this._elements.audioFlag[0].checked;
+	},
+	//
+	displayAudio: function(flag) {
+		if (flag=='false') {
+			// show
+			this._elements.audioPlayer.show();
+			this._elements.audio.show();
+			this._elements.audioLabel.show();
+		}
+		else {
+			// hide
+			this._elements.audioPlayer.hide();
+			this._elements.audio.hide();
+			this._elements.audioLabel.hide();
+		}	
 	}
 }

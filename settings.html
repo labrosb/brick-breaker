@@ -8,7 +8,7 @@
     <meta name="description" content="UIP2 UU project Brickbreaker">
     <meta name="author" content="Group 18">
 
-    <title>Brick Breaker</title>
+    <title id="title"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
@@ -39,61 +39,58 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Brick Breaker</a>
+                <a id="navTitle" class="navbar-brand" href="index.html"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="game.html">Play</a>
+                        <a id="navPlay" href="game.html"></a>
                     </li>
                     <li>
-                        <a href="settings.html">Settings</a>
+                        <a id="navSettings" href="settings.html"></a>
                     </li>
                     <li>
-                        <a href="help.html">Help</a>
+                        <a id="navHelp" href="help.html"></a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container -->
     </nav>
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>Sound and Volume</h3>
-                <div class="col-md-4 text-right">
-                    <label for="audio">Choose track:</label>
+                <h3 id="audioHeader"></h3>
+                <div class="col-md-4 text-center">
+                    <label id="audioFlagLabel" for="audioFlag"></label>
+                    <input id="audioFlag" type="checkbox" name="audioFlag">
+                </div>
+                <div class="col-md-4 text-center">
+                    <label id="audioLabel" for="audio"></label>
                     <select id="audio">
                     </select>
                 </div>
                 <div class="col-md-4 text-center">
                     <audio id="audioPlayer" controls>
-                        <p>Your browser does not support this feature !!</p>
+                        <p id="audioPlayerSupport"></p>
                     </audio>
                 </div>
-                <div class="col-md-4 text-left">
-                    <label for="audioFlag">Disable music:</label>
-                    <input id="audioFlag" type="checkbox" name="audioFlag">
-                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>Language</h3>
+                <h3 id="languageHeader"></h3>
             </div>
             <div class="col-md-12 text-center">
-                <select>
-                    <option value="english">English</option>
-                    <option value="spanish">Español</option>
-                    <option value="greek">ελληνικά</option>
-                    <option value="svenska">Svenska</option>
-                </select>
+                <label id="languageLabel" for="language"></label>
+                <select id="language"></select>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>Background</h3>
+                <h3 id="backgroundHeader"></h3>
             </div>
         </div>
     </div>
@@ -107,6 +104,8 @@
     <script src="js/helper/event.js"></script>
     <script src="js/view/audioView.js"></script>
     <script src="js/model/audioModel.js"></script>
+    <script src="js/view/languageView.js"></script>
+    <script src="js/model/languageModel.js"></script>
     <script src="js/controller.js"></script>
     <script src="js/settings.js"></script>
     </body>

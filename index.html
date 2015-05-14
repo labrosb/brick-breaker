@@ -8,7 +8,7 @@
     <meta name="description" content="UIP2 UU project Brickbreaker">
     <meta name="author" content="Group 18">
 
-    <title>Brick Breaker</title>
+    <title id="title"></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
@@ -39,19 +39,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Brick Breaker</a>
+                <a id="navTitle" class="navbar-brand" href="index.html"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="game.html">Play</a>
+                        <a id="navPlay" href="game.html"></a>
                     </li>
                     <li>
-                        <a href="settings.html">Settings</a>
+                        <a id="navSettings" href="settings.html"></a>
                     </li>
                     <li>
-                        <a href="help.html">Help</a>
+                        <a id="navHelp" href="help.html"></a>
                     </li>
                 </ul>
             </div>
@@ -63,10 +63,18 @@
     <!-- Page Content -->
     <div class="container center-block">
 
+        <!-- Language select -->
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <label id="languageLabel" for="language"></label>
+                <select id="language"></select>
+            </div>
+        </div>
+
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="page-header"> Brick Breaker</h1>
+                <h1 id="headerTitle" class="page-header"></h1>
             </div>
         </div>
         <!-- /.row -->
@@ -74,7 +82,7 @@
         <!-- Project One -->
         <div class="row">
             <div class="col-md-12 text-center">
-                <a class="btn btn-primary" href="game.html">Play</a>
+                <a id="headerPlay" class="btn btn-primary" href="game.html"></a>
             </div>
         </div>
         <!-- /.row -->
@@ -84,7 +92,7 @@
         <!-- Project Two -->
         <div class="row">
             <div class="col-md-12 text-center">
-                <a class="btn btn-primary" href="settings.html">Settings</a>
+                <a id="headerSettings" class="btn btn-primary" href="settings.html"></a>
             </div>
         </div>
         <!-- /.row -->
@@ -94,7 +102,7 @@
         <!-- Project Three -->
         <div class="row">
             <div class="col-md-12 text-center">
-                <a class="btn btn-primary" href="help.html">Help</a>
+                <a id="headerHelp" class="btn btn-primary" href="help.html"></a>
             </div>
         </div>
         <!-- /.row -->

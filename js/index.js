@@ -6,7 +6,11 @@ function Index() {
 
 Index.prototype = {
 	_getViews: function() {
-		var languageView = new LanguageView();
+		var languageView = new LanguageView({
+			'language' : $('#language'),
+			'audioLanguage' : $('#audioLanguage')
+			
+		});
 		return {
 			language: languageView
 		};
@@ -24,7 +28,8 @@ Index.prototype = {
 		this._initialization.setInitVolumeLevel();
 		this._initialization.setInitAudioFlag();
 		this._initialization.setInitLanguage();
-		this._initialization.printValue();
+		this._controller.initializeLanguage(localStorage.getItem('language'));
+		this._controller.initializeTranslation(localStorage.getItem('language'));
 	}
 }
 
