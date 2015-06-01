@@ -7,6 +7,11 @@ function Controller(models, views) {
     this._languageView = views.language;
 	/** @private */
     this._languageModel = models.language;
+    /** @private */
+    this._imageView = views.image;
+    /** @private */
+    this._imageModel = models.image;
+	/** @private */
     var _this = this;
     // LISTENERS
     // Audio View
@@ -15,11 +20,13 @@ function Controller(models, views) {
 			_this.readTrackListContent(args.track); 
         });
     }
+    // Audio Model
     if(this._audioModel) {
     	this._audioModel.contentQueried.attach(function (sender,args){
             _this.sendTrackListContent(args.content,args.track);
 		});
 	}
+	// Language View
 	if(this._languageView) {
 		this._languageView.generatedLanguageList.attach(function (sender,args) {
 			_this.readLanguageListContent(args.language);
@@ -29,6 +36,7 @@ function Controller(models, views) {
 			_this.readDictionaryContent(args.language);
 		});
 	}
+	// Language Model
 	if(this._languageModel) {
 		this._languageModel.contentQueried.attach(function (sender,args) {
 			_this.sendLanguageListContent(args.content,args.language);
@@ -36,6 +44,18 @@ function Controller(models, views) {
 		this._languageModel.dictionaryQueried.attach(function (sender,args) {
 			_this.sendDictionaryContent(args.dictionary,args.language);
 		})
+	}
+	// Image View
+	if(this._imageView) {
+		this._imageView.generatedBackgroundList.attach(function (sender,args) {
+			_this.readBackgroundListContent(args.background);
+		});
+	}
+	// Image Model
+	if(this._imageModel) {
+		this._imageModel.contentQueried.attach(function (sender, args) {
+			_this.sendBackgroundListContent(args.content,args.background);
+		});
 	}
 }    
 
@@ -78,9 +98,17 @@ Controller.prototype = {
 	// Translate document
 	sendDictionaryContent: function(content, language) {
 		this._languageView.translate(content, language);
+	},
+	// This function works as a trigger. It is called when initializing the settings page and it will read the JSON background image list
+	initializeBackground: function(background) {
+		this._imageView.generatedBackgroundList.notify({background: background});
+	},
+	// This function read the image JSON variable from the MODEL
+	readBackgroundListContent: function(background) {
+		this._imageModel.readContent(background);
+	},
+	// 
+	sendBackgroundListContent: function(content, background) {
+		this._imageView.setBackgroundList(content, background);
 	}
-	/*translate: function(language) {
-		this._languageView.selectedLanguage.notify({language: language});
-		this._languageModel.readDictionary();
-	}*/
 }

@@ -41,7 +41,7 @@ AudioView.prototype = {
 	},
 	//
 	setTrack: function(track) {
-		this._elements.audioPlayer[0].src = 'media/'+track; ;
+		this._elements.audioPlayer[0].src = 'media/'+track;
 	},
 	//
 	getTrack: function() {

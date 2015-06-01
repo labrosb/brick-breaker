@@ -18,17 +18,23 @@ Settings.prototype = {
 			'audioLanguage' : $('#audioLanguage')
 			
 		});
+		var imageView = new ImageView({
+			'image' : $('#image')
+		});
 		return {
 			audio: audioView,
-			language: languageView
+			language: languageView,
+			image: imageView
 		};
 	},
 	_getModels: function() {
 		var audioModel = new AudioModel();
 		var languageModel = new LanguageModel();
+		var imageModel = new ImageModel();
 		return {
 			audio: audioModel,
-			language: languageModel
+			language: languageModel,
+			image: imageModel
 		};
 	},
 	run: function() {
@@ -36,6 +42,7 @@ Settings.prototype = {
 		// Load track list into select tag
 		this._controller.initializeAudio(localStorage.getItem('trackName'),localStorage.getItem('volume'),localStorage.getItem('audioFlag'));
 		this._controller.initializeLanguage(localStorage.getItem('language'));
+		this._controller.initializeBackground(localStorage.getItem('background'));
 		this._controller.initializeTranslation(localStorage.getItem('language'));
 	}
 }

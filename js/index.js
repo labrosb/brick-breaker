@@ -28,6 +28,7 @@ Index.prototype = {
 		this._initialization.setInitVolumeLevel();
 		this._initialization.setInitAudioFlag();
 		this._initialization.setInitLanguage();
+		this._initialization.setInitBackground();
 		this._controller.initializeLanguage(localStorage.getItem('language'));
 		this._controller.initializeTranslation(localStorage.getItem('language'));
 	}

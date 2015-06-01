@@ -22,6 +22,10 @@ Initialization.prototype = {
 	getInitLanguage: function() {
 		return 'english';
 	},
+	// Retrieve the background image default value
+	getInitBackground: function() {
+		return 'earth.jpg';
+	},
 	// Check if track name has been previously defined; if not define it
 	setInitTrackName: function() {
 		var _this=this;
@@ -50,11 +54,19 @@ Initialization.prototype = {
 			localStorage.setItem('language',_this.getInitLanguage());
 		}
 	},
+	// Set the background image default value
+	setInitBackground: function() {
+		var _this=this;
+		if(localStorage.getItem('background')==null) {
+			localStorage.setItem('background',_this.getInitBackground());
+		}
+	},
 	// Test
 	printValue: function() {
 		console.log('trackName '+localStorage.getItem('trackName'));
 		console.log('volume '+localStorage.getItem('volume'));
 		console.log('audioFlag '+localStorage.getItem('audioFlag'));
 		console.log('language '+localStorage.getItem('language'));
+		console.log('background '+localStorage.getItem('background'));
 	}
 }
