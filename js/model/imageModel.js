@@ -6,6 +6,6 @@ function ImageModel() {
 ImageModel.prototype = {
 	// Returns the object
 	readContent: function(image) {
-		this.contentQueried.notify({content: this._imageList, track: image});
+		this.contentQueried.notify({content: this._imageList, background: image});
 	}
 };

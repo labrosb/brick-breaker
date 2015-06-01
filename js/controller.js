@@ -62,10 +62,11 @@ function Controller(models, views) {
 Controller.prototype = {
 	// This function works as a trigger. It is called when initializing the settings page
 	initializeAudio: function(track, level, flag) {
+		this._audioView.setAudioFlag(flag);
 		this._audioView.generatedTrackList.notify({track: track});
 		this._audioView.setTrack(track);
 		this._audioView.setTrackVolume(level);
-		this._audioView.setAudioFlag(flag);
+		this._audioView.displayAudio(localStorage.getItem('audioFlag'));
 	},
 	// Query the track list
 	readTrackListContent: function(track) {

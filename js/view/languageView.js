@@ -41,7 +41,7 @@ LanguageView.prototype = {
             };
         });
 	},
-	//
+	// Get current value of the language selected
 	getLanguage: function() {
 		return this._elements.language.val();
 	}
