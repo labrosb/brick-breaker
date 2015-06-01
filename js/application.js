@@ -6,6 +6,7 @@
 var brickArray = [];
 var brickXcoordinate;
 var brickYcoordinate;
+var colorlist = ['#F80000', '#0000CC', '#FFFF00', '#33FF00', '#660066', '#FF0099', '#330000'];
 
 
 $(document).ready(function(){
@@ -55,7 +56,7 @@ var ball = {
     changeInXaxis:5,
     changeInYaxis:-5,
     drawBall: function(xaxis,yaxis,radius){
-        //canvas.context.fillStyle = "#00A308";
+        canvas.context.fillStyle = "#00A308";
         canvas.context.beginPath();
         canvas.context.arc(xaxis, yaxis, radius, 0, Math.PI*2, true); 
         canvas.context.closePath();
@@ -109,11 +110,20 @@ var verticalBar = {
     xaxis:400,
     yaxis:585,
     drawRectangle:function(Xaxis,Yaxis,width,height){
+        canvas.context.fillStyle = "blue";
         canvas.context.beginPath();
         canvas.context.rect(Xaxis, Yaxis, width, height);
         canvas.context.closePath();
         canvas.context.fill();
-        }   
+        },
+
+    drawBrick:function(Xaxis,Yaxis,width,height,color){
+        canvas.context.fillStyle = color;
+        canvas.context.beginPath();
+        canvas.context.rect(Xaxis, Yaxis, width, height);
+        canvas.context.closePath();
+        canvas.context.fill();
+        } 
     };
 
 var mouse ={
@@ -178,7 +188,7 @@ var bricks = {
                 if (brickArray[r][c].availability===1){
                     brickArray[r][c].xcoordinate=brickXcoordinate;//setting the x cordinate for each individual brick in the array
                     brickArray[r][c].ycoordinate=brickYcoordinate;//setting the y cordinate for each individual brick in the array
-                    verticalBar.drawRectangle(brickXcoordinate,brickYcoordinate,this.width,this.height);
+                    verticalBar.drawBrick(brickXcoordinate,brickYcoordinate,this.width,this.height,colorlist[c]);
                 }  
                 bricks.collision();
             }
@@ -198,5 +208,5 @@ var bricks = {
             brickArray[r][c].ycoordinate =0;
             brickArray[r][c].xcoordinate =0;
         }
-    }
+    } 
 };
