@@ -1,7 +1,7 @@
 function LanguageModel() {
 	this.contentQueried = new Event(this);
 	this.dictionaryQueried = new Event(this);
-	this._languageList = [{"name":"English","value":"english"},{"name":"Español","value":"spanish"},{"name":"ελληνικά","value":"greek"},{"name":"Svenska","value":"swedish"}];
+	this._languageList = [{"name":"English","value":"english"},{"name":"Español","value":"spanish"},{"name":"Eλληνικά","value":"greek"},{"name":"Svenska","value":"swedish"}];
 	this._dictionary = {
         "english":[
             //{"position":"#","word":"","type":"text"},
@@ -39,22 +39,22 @@ function LanguageModel() {
             {"position":"#languageHeader","word":"Idioma","type":"text"},
             {"position":"#backgroundHeader","word":"Fondo","type":"text"}],
 		"greek":[
-            {"position":"#title","word":"","type":"text"},
-            {"position":"#navTitle","word":"","type":"text"},
-            {"position":"#navPlay","word":"","type":"text"},
-            {"position":"#navSettings","word":"","type":"text"},
-            {"position":"#navHelp","word":"","type":"text"},
-            {"position":"#languageLabel","word":":","type":"text"},
-            {"position":"#headerTitle","word":"malaka","type":"text"},
-            {"position":"#headerPlay","word":"","type":"text"},
-            {"position":"#headerSettings","word":"","type":"text"},
-            {"position":"#headerHelp","word":"","type":"text"},
-			{"position":"#audioHeader","word":"","type":"text"},
-            {"position":"#audioFlagLabel","word":"","type":"text"},
-            {"position":"#audioLabel","word":":","type":"text"},
-            {"position":"#audioPlayerSupport","word":"","type":"text"},
-            {"position":"#languageHeader","word":"","type":"text"},
-            {"position":"#backgroundHeader","word":"","type":"text"}],
+            {"position":"#title","word":"Τουβλοθραύστης","type":"text"},
+            {"position":"#navTitle","word":"Τουβλοθραύστης","type":"text"},
+            {"position":"#navPlay","word":"Παίξτε","type":"text"},
+            {"position":"#navSettings","word":"Ρυθμίσεις","type":"text"},
+            {"position":"#navHelp","word":"Βοήθεια","type":"text"},
+            {"position":"#languageLabel","word":"Επιλογή Γλώσας","type":"text"},
+            {"position":"#headerTitle","word":"Τουβλοθραύστης","type":"text"},
+            {"position":"#headerPlay","word":"Παίξτε","type":"text"},
+            {"position":"#headerSettings","word":"Ρυθμίσεις","type":"text"},
+            {"position":"#headerHelp","word":"Βοήθεια","type":"text"},
+			{"position":"#audioHeader","word":"Ήχος και ένταση","type":"text"},
+            {"position":"#audioFlagLabel","word":"Απενεργοποίηση μουσικής;","type":"text"},
+            {"position":"#audioLabel","word":"Επιλογή ήχου","type":"text"},
+            {"position":"#audioPlayerSupport","word":"Δεν υποστηρίζεται από τον περιηγητή","type":"text"},
+            {"position":"#languageHeader","word":"Γλώσσα","type":"text"},
+            {"position":"#backgroundHeader","word":"Φόντο","type":"text"}],
         "swedish":[
             {"position":"#title","word":"","type":"text"},
             {"position":"#navTitle","word":"","type":"text"},
