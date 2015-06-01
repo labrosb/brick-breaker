@@ -41,6 +41,8 @@ var canvas = {
         this.canvas = document.getElementById("canvas");
         // Create the HTML5 context object to enable draw methods
         this.context = this.canvas.getContext("2d");
+        //this.canvas.style.backgroundImage = "url('media/'"+localStorage.getItem('background')+")";
+        $('#canvas').css('background-image', 'url(media/'+localStorage.getItem('background')+')');
         this.width = $('#canvas').width();
         this.height= $('#canvas').height();
         this.minXaxis = $('#canvas').offset().left;

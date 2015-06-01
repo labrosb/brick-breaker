@@ -30,34 +30,34 @@
     <![endif]-->
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Brick Breaker</a>
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="navTitle" class="navbar-brand" href="index.html"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a id="navPlay" href="game.html"></a>
+                        </li>
+                        <li>
+                            <a id="navSettings" href="settings.html"></a>
+                        </li>
+                        <li>
+                            <a id="navHelp" href="help.html"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="game.html">Play</a>
-                    </li>
-                    <li>
-                        <a href="settings.html">Settings</a>
-                    </li>
-                    <li>
-                        <a href="help.html">Help</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-    </nav>
+        </nav>
     <div class="container">
         
     </div>
@@ -67,5 +67,11 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </body>
+    <!-- Custom JavaScript -->
+    <script src="js/helper/event.js"></script>
+    <script src="js/view/languageView.js"></script>
+    <script src="js/model/languageModel.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/help.js"></script>
+</body>
 </html>    
