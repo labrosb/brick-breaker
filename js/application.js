@@ -213,6 +213,7 @@ var bricks = {
         }   
     },
     draw: function(){
+        var totalNumberOfBricks = 0;
         for (r=0;r<this.column;r++){
             for (c=0;c<this.row;c++){
                 brickXcoordinate=(r*(this.width+this.padding))+this.offset_left;
@@ -223,9 +224,28 @@ var bricks = {
                     brickArray[r][c].ycoordinate=brickYcoordinate;//setting the y cordinate for each individual brick in the array
                     verticalBar.drawBrick(brickXcoordinate,brickYcoordinate,this.width,this.height,colorlist[c]);
                 }  
+                
+                
+                /*
+                 * Since each brick has an availablity of 1, as the foor loop runs
+                 * for each run, it adds the value of the availablity to the declared variable
+                 * which results in being able to find the total number of bricks.          
+                 */
+                totalNumberOfBricks+=brickArray[r][c].availability;
+               
+               
                 bricks.collision();
             }
         }
+        /*
+         * This checks if the total sum of availablity element in brick array is 0 
+         * if it is this means that player has killed/hit all the bricks.
+         */
+        if (totalNumberOfBricks===0){
+                   clearInterval(app.interval);
+                   happyFace.drawingHappyFace();
+               }
+        //console.log(v);
     },
     collision:function(){
     /*
@@ -242,6 +262,9 @@ var bricks = {
             brickArray[r][c].xcoordinate =0;
             player.score+=100;
         }
+        
+        
+        
     } 
 };
 
@@ -266,6 +289,19 @@ var sadFace = {
         sadFaceImage.src= 'media/sadFace.png';
         sadFaceImage.onload = function (){
         canvas.context.drawImage(sadFaceImage,300,200);
+        };
+        
+    },
+    
+};
+
+var happyFace = {
+    
+    drawingHappyFace:function() {
+        happyFaceImage = new Image();
+        happyFaceImage.src= 'media/happyFace.png';
+        happyFaceImage.onload = function (){
+        canvas.context.drawImage(happyFaceImage,300,200);
         };
         
     },
