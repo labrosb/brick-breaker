@@ -17,13 +17,12 @@ ImageView.prototype = {
 	// Generate image select element
 	setBackgroundList: function(content, background) {
 		var vContent="";
-		console.log(background);
 		$.each(content, function(index, element){
 			if(element['value']==background) {
-				vContent=vContent+"<option data-img-src='media/"+element['value']+"' value='"+element['value']+"' selected='selected'>"+element['name']+"</option>";
+				vContent=vContent+"<option data-img-src='media/"+element['thumbnail']+"' value='"+element['value']+"' selected='selected'>"+element['name']+"</option>";
 			}
 			else {
-				vContent=vContent+"<option data-img-src='media/"+element['value']+"' value='"+element['value']+"' >"+element['name']+"</option>";
+				vContent=vContent+"<option data-img-src='media/"+element['thumbnail']+"' value='"+element['value']+"' >"+element['name']+"</option>";
 			}
 		});
 		this._elements.image.append(vContent);
