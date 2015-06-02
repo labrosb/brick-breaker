@@ -10,11 +10,33 @@
 #gameContainer {
 	margin-right: auto;
 	margin-left: auto;
+        float: left;
 	//width: 100%;
 }
 
 #canvas {
 	border: black 1px solid;
+        //position: fixed;
 	//width: 55%;
 	//height: 55%;
+}
+#gameDetails{
+   // border: solid 1px;
+    float: right;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+   
+}
+
+
+#allContainer{
+    margin-left: 800px;
+}
+
+#resetButton{
+    width: 100px;
+    //margin-left: 50px;
+    
+    
 }

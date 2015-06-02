@@ -15,13 +15,18 @@ var colorlist = ['#F80000', '#0000CC', '#FFFF00', '#33FF00', '#660066', '#FF0099
 $(document).ready(function(){
     app.init();
     $(document).mousemove(mouse.moveMouse);
+    
+        
+  
 });
 
 var app = {
     interval:0,
     init:function () {
         canvas.dimentions(); 
+        canvasGameDetails.dimentions();
         bricks.setupArray();
+        player.display();
         //calls the drawAllObjects funtction every 10 milliseconds 
         this.interval = setInterval(this.drawAllObjects, 10);
     },
@@ -32,9 +37,12 @@ var app = {
         bricks.draw();
         ball.moveBall();
         player.display();
+        
+        
     },
     clearCanvas: function(){
         canvas.context.clearRect(0,0,canvas.width,canvas.height);
+        canvasGameDetails.context.clearRect(0,0,canvasGameDetails.width,canvasGameDetails.height);
     }
 };
 
@@ -44,11 +52,27 @@ var canvas = {
         this.canvas = document.getElementById("canvas");
         // Create the HTML5 context object to enable draw methods
         this.context = this.canvas.getContext("2d");
-        //this.canvas.style.backgroundImage = "url('media/'"+localStorage.getItem('background')+")";
+        
         $('#canvas').css('background-image', 'url(media/'+localStorage.getItem('background')+')');
         this.width = $('#canvas').width();
         this.height= $('#canvas').height();
         this.minXaxis = $('#canvas').offset().left;
+        this.maxXaxis = this.minXaxis + this.widthOfCanavas;
+    }
+};
+
+
+var canvasGameDetails = {
+    dimentions:function(){
+        // Assigning our canavas element to a variable
+        this.canvasGameDetails = document.getElementById("canvasGameDetails");
+        // Create the HTML5 context object to enable draw methods
+        this.context = this.canvasGameDetails.getContext("2d");
+        //this.canvas.style.backgroundImage = "url('media/'"+localStorage.getItem('background')+")";
+      //  $('#canvasGameDetails').css('background-image', 'url(media/'+localStorage.getItem('background')+')');
+        this.width = $('#canvasGameDetails').width();
+        this.height= $('#canvasGameDetails').height();
+        this.minXaxis = $('#canvasGameDetails').offset().left;
         this.maxXaxis = this.minXaxis + this.widthOfCanavas;
     }
 };
@@ -92,7 +116,7 @@ var ball = {
                 ball.reset();
                 if (player.life ===0) {
                     clearInterval(app.interval);
-                    canvas.context.fillText("GAME OVER :(",400,300);
+                    sadFace.drawingSimileyFace();
                 }
             }
         }
@@ -115,7 +139,7 @@ var verticalBar = {
     xaxis:400,
     yaxis:585,
     drawRectangle:function(Xaxis,Yaxis,width,height){
-        canvas.context.fillStyle = "blue";
+        canvas.context.fillStyle = "white";
         canvas.context.beginPath();
         canvas.context.rect(Xaxis, Yaxis, width, height);
         canvas.context.closePath();
@@ -153,12 +177,13 @@ var player = {
     score:0,
     level:1,
     display:function (){
-        canvas.context.fillText("LEVEL: ",30,20);
-        canvas.context.fillText(this.level,80,20);
-        canvas.context.fillText("LIFE: ",30,40);
-        canvas.context.fillText(this.life,80,40);
-        canvas.context.fillText("SCORE: ",30,80);
-        canvas.context.fillText(this.score,80,80);  
+                //canvasGameDetails.context
+        canvasGameDetails.context.fillText("LIFE: ",30,240);
+        canvasGameDetails.context.fillText(this.life,80,240);
+        canvasGameDetails.context.fillText("SCORE: ",30,280);
+        canvasGameDetails.context.fillText(this.score,80,280); 
+        
+        
     },
     reset:function(){
         this.life=4;
@@ -217,8 +242,32 @@ var bricks = {
     } 
 };
 
-var image = {
+function move(e) {
+    e = e || window.event;
+
+
+    if(e.keyCode == 37 && verticalBar.xaxis > 0){
+        verticalBar.xaxis -= 15;
+    }
+    else if(e.keyCode == 39 && verticalBar.xaxis < canvas.width - verticalBar.width){
+        verticalBar.xaxis += 15;
+    }
+}
+
+document.onkeydown = move;
+
+var sadFace = {
     
-    
+    drawingSimileyFace:function() {
+        sadFaceImage = new Image();
+        sadFaceImage.src= 'media/sadFace.png';
+        sadFaceImage.onload = function (){
+        canvas.context.drawImage(sadFaceImage,300,200);
+        };
+        
+    },
     
 };
+
+
+ 
