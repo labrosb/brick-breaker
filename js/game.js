@@ -7,20 +7,31 @@ Game.prototype = {
 	_getViews: function() {
 		var languageView = new LanguageView({
 			'language' : $('#language'),
-			'audioLanguage' : $('#audioLanguage')
+			'languageLabel' : $('#languageLabel')
+		});
+		var audioView = new AudioView({
+			'audio' : $('#audio'),
+			'audioPlayer' : $('#audioPlayer'),
+			'audioFlag' : $('#audioFlag'),
+			'audioFlagLabel' : $('#audioFlagLabel'),
+			'audioLabel' : $('#audioLabel')
 		});
 		return {
-			language: languageView
+			language: languageView,
+			audio: audioView
 		};
 	},
 	_getModels: function() {
+		var audioModel = new AudioModel();
 		var languageModel = new LanguageModel();
 		return {
+			audio: audioModel,
 			language: languageModel
 		};
 	},
 	run: function() {
 		this._controller = new Controller(this._getModels(),this._getViews());
+		this._controller.initializeGameAudio(localStorage.getItem('trackName'),localStorage.getItem('volume'),localStorage.getItem('audioFlag'));
 		this._controller.initializeTranslation(localStorage.getItem('language'));
 	}
 }

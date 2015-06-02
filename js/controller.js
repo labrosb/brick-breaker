@@ -108,8 +108,18 @@ Controller.prototype = {
 	readBackgroundListContent: function(background) {
 		this._imageModel.readContent(background);
 	},
-	// 
+	// Sends the background image content available to the view 
 	sendBackgroundListContent: function(content, background) {
 		this._imageView.setBackgroundList(content, background);
+	},
+	// Plays the music on the game tab :D or not :c
+	initializeGameAudio: function(track, level, flag) {
+		if (flag=='false') {
+			// play
+			this._audioView.setTrack(track);
+			this._audioView.setTrackVolume(level);
+			this._audioView.play();
+		}
+		this._audioView.hide();
 	}
 }
