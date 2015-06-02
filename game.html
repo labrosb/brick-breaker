@@ -54,6 +54,15 @@
                 <!-- /.navbar-collapse -->
             </div>
         </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-left">
+                    <audio id="audioPlayer" controls>
+                        <p id="audioPlayerSupport"></p>
+                    </audio>
+                </div>
+            </div>
+        </div>
         <div id="gameContainer">
             <canvas id="canvas" width="800" height="600"></canvas>
         </div>
@@ -68,6 +77,8 @@
         <script src="js/helper/event.js"></script>
         <script src="js/view/languageView.js"></script>
         <script src="js/model/languageModel.js"></script>
+        <script src="js/view/audioView.js"></script>
+        <script src="js/model/audioModel.js"></script>
         <script src="js/controller.js"></script>
         <script src="js/game.js"></script>
     </body>

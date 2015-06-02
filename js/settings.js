@@ -15,8 +15,7 @@ Settings.prototype = {
 		});
 		var languageView = new LanguageView({
 			'language' : $('#language'),
-			'audioLanguage' : $('#audioLanguage')
-			
+			'languageLabel' : $('#languageLabel')
 		});
 		var imageView = new ImageView({
 			'image' : $('#image')

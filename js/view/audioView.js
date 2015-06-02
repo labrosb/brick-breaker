@@ -86,5 +86,13 @@ AudioView.prototype = {
 			this._elements.audio.hide();
 			this._elements.audioLabel.hide();
 		}	
+	},
+	// Play the audio track
+	play: function() {
+		this._elements.audioPlayer[0].play();
+	},
+	// Hide the audio player
+	hide: function() {
+		this._elements.audioPlayer.hide();
 	}
 }
