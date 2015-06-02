@@ -9,7 +9,7 @@
 var brickArray = [];
 var brickXcoordinate;
 var brickYcoordinate;
-var colorlist = ['#F80000', '#0000CC', '#FFFF00', '#33FF00', '#660066', '#FF0099', '#330000'];
+var colorlist = ['#FF5E3A','#FFDB4C','#87FC70','#FFDB4C','#FF3B30', '#5AC8FB', '#DBDDDE'];
 
 
 $(document).ready(function(){
@@ -85,7 +85,7 @@ var ball = {
     changeInXaxis:5,
     changeInYaxis:-5,
     drawBall: function(xaxis,yaxis,radius){
-        canvas.context.fillStyle = "#FFFFFF";
+        canvas.context.fillStyle = "#FCFCCF";
         canvas.context.beginPath();
         canvas.context.arc(xaxis, yaxis, radius, 0, Math.PI*2, true); 
         canvas.context.closePath();
@@ -108,7 +108,10 @@ var ball = {
         /* Ball hitting the BAR */
         else if (this.yaxis +this.changeInYaxis + this.radius> canvas.height - verticalBar.height) {
             if (this.xaxis>verticalBar.xaxis && this.xaxis<verticalBar.xaxis+verticalBar.width) {
-                this.changeInYaxis=-this.changeInYaxis;
+               
+               this.changeInXaxis =10*((this.xaxis-(verticalBar.xaxis+verticalBar.width/2))/verticalBar.width);
+               this.changeInYaxis=-this.changeInYaxis;
+                
             }
             //if the ball misses the vertical bar
             else {
@@ -139,7 +142,7 @@ var verticalBar = {
     xaxis:400,
     yaxis:585,
     drawRectangle:function(Xaxis,Yaxis,width,height){
-        canvas.context.fillStyle = "white";
+        canvas.context.fillStyle = "#FCFCCF";
         canvas.context.beginPath();
         canvas.context.rect(Xaxis, Yaxis, width, height);
         canvas.context.closePath();
@@ -177,11 +180,11 @@ var player = {
     score:0,
     level:1,
     display:function (){
-                //canvasGameDetails.context
+        canvasGameDetails.context.font ="30pt Calibri";
         canvasGameDetails.context.fillText("LIFE: ",30,240);
-        canvasGameDetails.context.fillText(this.life,80,240);
-        canvasGameDetails.context.fillText("SCORE: ",30,280);
-        canvasGameDetails.context.fillText(this.score,80,280); 
+        canvasGameDetails.context.fillText(this.life,140,240);
+        canvasGameDetails.context.fillText("SCORE: ",30,330);
+        canvasGameDetails.context.fillText(this.score,160,330); 
         
         
     },
@@ -269,5 +272,3 @@ var sadFace = {
     
 };
 
-
- 
