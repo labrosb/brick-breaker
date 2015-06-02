@@ -2,7 +2,10 @@
 * To change this license header, choose License Headers in Project Properties.
 * To change this template file, choose Tools | Templates
 * and open the template in the editor.
+* This application has taken assistance from the following tutorial, 
+* www.billmill.org/static/canvastutorial/
 */
+
 var brickArray = [];
 var brickXcoordinate;
 var brickYcoordinate;
@@ -58,7 +61,7 @@ var ball = {
     changeInXaxis:5,
     changeInYaxis:-5,
     drawBall: function(xaxis,yaxis,radius){
-        canvas.context.fillStyle = "#00A308";
+        canvas.context.fillStyle = "#FFFFFF";
         canvas.context.beginPath();
         canvas.context.arc(xaxis, yaxis, radius, 0, Math.PI*2, true); 
         canvas.context.closePath();
@@ -209,6 +212,13 @@ var bricks = {
             brickArray[r][c].availability=0; 
             brickArray[r][c].ycoordinate =0;
             brickArray[r][c].xcoordinate =0;
+            player.score+=100;
         }
     } 
+};
+
+var image = {
+    
+    
+    
 };

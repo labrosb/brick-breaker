@@ -10,11 +10,11 @@
 #gameContainer {
 	margin-right: auto;
 	margin-left: auto;
-	width: 100%;
+	//width: 100%;
 }
 
 #canvas {
 	border: black 1px solid;
-	width: 55%;
-	height: 55%;
+	//width: 55%;
+	//height: 55%;
 }
