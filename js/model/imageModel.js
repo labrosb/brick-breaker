@@ -1,6 +1,9 @@
 function ImageModel() {
 	this.contentQueried = new Event(this);
-	this._imageList = [{"name":"Earth","value":"earth.jpg"},{"name":"Moon","value":"moon.jpg"},{"name":"Saturn","value":"saturn.jpg"}];	
+	this._imageList = [
+		{"name":"Earth","value":"earth.jpg","thumbnail":"earth_small.jpg"},
+		{"name":"Moon","value":"moon.jpg","thumbnail":"moon_small.jpg"},
+		{"name":"Saturn","value":"saturn.jpg","thumbnail":"saturn_small.jpg"}];	
 }
 
 ImageModel.prototype = {
