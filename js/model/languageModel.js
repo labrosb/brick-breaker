@@ -56,22 +56,22 @@ function LanguageModel() {
             {"position":"#languageHeader","word":"Γλώσσα","type":"text"},
             {"position":"#backgroundHeader","word":"Φόντο","type":"text"}],
         "swedish":[
-            {"position":"#title","word":"","type":"text"},
-            {"position":"#navTitle","word":"","type":"text"},
-            {"position":"#navPlay","word":"","type":"text"},
-            {"position":"#navSettings","word":"","type":"text"},
-            {"position":"#navHelp","word":"","type":"text"},
-            {"position":"#languageLabel","word":":","type":"text"},
-            {"position":"#headerTitle","word":"","type":"text"},
-            {"position":"#headerPlay","word":"","type":"text"},
-            {"position":"#headerSettings","word":"","type":"text"},
-            {"position":"#headerHelp","word":"","type":"text"},
-			{"position":"#audioHeader","word":"","type":"text"},
-            {"position":"#audioFlagLabel","word":"","type":"text"},
-            {"position":"#audioLabel","word":":","type":"text"},
+            {"position":"#title","word":"Brick Breaker","type":"text"},
+            {"position":"#navTitle","word":"Brick Breaker","type":"text"},
+            {"position":"#navPlay","word":"Spela","type":"text"},
+            {"position":"#navSettings","word":"Insättningar","type":"text"},
+            {"position":"#navHelp","word":"Hjälp","type":"text"},
+            {"position":"#languageLabel","word":"Välj språk","type":"text"},
+            {"position":"#headerTitle","word":"Brick Breaker","type":"text"},
+            {"position":"#headerPlay","word":"Spela","type":"text"},
+            {"position":"#headerSettings","word":"Insättningar","type":"text"},
+            {"position":"#headerHelp","word":"Hjälp","type":"text"},
+			{"position":"#audioHeader","word":"Ljud och ljudnivå","type":"text"},
+            {"position":"#audioFlagLabel","word":"Inaktivera ljud?","type":"text"},
+            {"position":"#audioLabel","word":"Välj låt","type":"text"},
             {"position":"#audioPlayerSupport","word":"","type":"text"},
-            {"position":"#languageHeader","word":"","type":"text"},
-            {"position":"#backgroundHeader","word":"","type":"text"}]
+            {"position":"#languageHeader","word":"Språk","type":"text"},
+            {"position":"#backgroundHeader","word":"Bakgrunden","type":"text"}]
     }
     this._words = [];
 }
