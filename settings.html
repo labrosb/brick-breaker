@@ -11,6 +11,8 @@
     <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
     <!-- Image Picker CSS -->
     <link href="css/vendor/image-picker.css" rel="stylesheet">
+	<!-- Audio settings CSS -->
+    <link href="css/vendor/settings.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/vendor/1-col-portfolio.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -39,8 +41,8 @@
                 <a id="navTitle" class="navbar-brand" href="index.html"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav right">
                     <li>
                         <a id="navPlay" href="game.html"></a>
                     </li>
@@ -59,35 +61,38 @@
     <div class="container">
         
         <!-- Language select -->
-        <div class="row">
-            <div class="col-md-12 text-left">
-                <label id="languageLabel" for="language"></label>
+        <div class="row lang-select">
+            <div class="right">
+                <label id="languageLabel" for="language"></label>&nbsp;
                 <select id="language"></select>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12 text-left">
-                <u><h3 id="audioHeader"></h3></u>
-                <div class="col-md-4 text-center">
-                    <label id="audioFlagLabel" for="audioFlag"></label>
-                    <input id="audioFlag" type="checkbox" name="audioFlag">
-                </div>
-                <div class="col-md-4 text-center">
-                    <label id="audioLabel" for="audio"></label>
-                    <select id="audio">
-                    </select>
-                </div>
-                <div class="col-md-4 text-center">
-                    <audio id="audioPlayer" controls>
-                        <p id="audioPlayerSupport"></p>
-                    </audio>
-                </div>
+                <h3 id="audioHeader"></h3>
+				<div class="audio-settings">
+					<div class="text-center">
+						<label id="audioFlagLabel" for="audioFlag"></label>&nbsp;
+						<input id="audioFlag" type="checkbox" name="audioFlag">
+					</div>
+					<div class="text-center">
+						<label id="audioLabel" for="audio"></label>&nbsp;
+						<select id="audio">
+						</select>
+					</div>
+					<div class="text-center">
+						<audio id="audioPlayer" controls>
+							<p id="audioPlayerSupport"></p>
+						</audio>
+					</div>
+				</div>
             </div>
         </div>
+		<br />
         <div class="row">
             <div class="col-md-12 text-left">
-                <u><h3 id="backgroundHeader"></h3></u>
+                <h3 id="backgroundHeader"></h3>
             </div>
             <div class="col-md-12 text-center">
                 <label id="imageLabel" for="image"></label>

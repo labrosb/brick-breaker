@@ -15,9 +15,6 @@ var colorlist = ['#FF5E3A','#FFDB4C','#87FC70','#FFDB4C','#FF3B30', '#5AC8FB', '
 $(document).ready(function(){
     app.init();
     $(document).mousemove(mouse.moveMouse);
-    
-        
-  
 });
 
 var app = {
@@ -37,8 +34,6 @@ var app = {
         bricks.draw();
         ball.moveBall();
         player.display();
-        
-        
     },
     clearCanvas: function(){
         canvas.context.clearRect(0,0,canvas.width,canvas.height);
@@ -69,7 +64,7 @@ var canvasGameDetails = {
         // Create the HTML5 context object to enable draw methods
         this.context = this.canvasGameDetails.getContext("2d");
         //this.canvas.style.backgroundImage = "url('media/'"+localStorage.getItem('background')+")";
-      //  $('#canvasGameDetails').css('background-image', 'url(media/'+localStorage.getItem('background')+')');
+		// $('#canvasGameDetails').css('background-image', 'url(media/'+localStorage.getItem('background')+')');
         this.width = $('#canvasGameDetails').width();
         this.height= $('#canvasGameDetails').height();
         this.minXaxis = $('#canvasGameDetails').offset().left;
@@ -140,7 +135,7 @@ var verticalBar = {
     width:120,
     height:15,
     xaxis:400,
-    yaxis:585,
+    yaxis:575,
     drawRectangle:function(Xaxis,Yaxis,width,height){
         canvas.context.fillStyle = "#FCFCCF";
         canvas.context.beginPath();

@@ -117,6 +117,11 @@ textarea {
   margin: 0;
   font: inherit;
   color: inherit;
+  border: 0.5px solid #222222;
+  border-radius: 12px;
+  padding: 2px 4px;
+  box-sizing: border-box;
+  outline-width: 0;
 }
 button {
   overflow: visible;

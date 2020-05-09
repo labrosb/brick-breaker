@@ -66,7 +66,7 @@ var ball = {
 					$.msgBox({ 
 						type: "info",
 						title: "Notice",
-						content: "Ball reflected successfully",
+						content: "<p>Ball reflected successfully</p>",
 						buttons: [{ value: "Next>>" }],
 						success: function (result) {							
 							app.interval = setInterval(app.drawAllObjects, 15); //resumes game
@@ -83,13 +83,13 @@ var ball = {
 						reflects = 0;
 						$.msgBox({ 
 							title: "Attention!!!",
-							content: "If balls falls, you lose a life. </br></br> If you lose all your lives, the game is over!!  </br></br>",
+							content: "<p>If balls falls, you lose a life.</p> </br> <p>If you lose all your lives, the game is over!!</p> </br></br>",
 							buttons: [{ value: "Next>>" }],
 							success: function (result) {
 								$.msgBox({ 
 									type: "info",
 									title: "Practice!!!",
-									content: "Now try it yourself!! :) </br></br> Reflect the ball 3 times without loosing!  </br></br>",
+									content: "<p>Now try it yourself!! :)</p> </br> <p>Reflect the ball 3 times without loosing!</p> </br>",
 									buttons: [{ value: "OK" }],
 									success: function (result) {
 										app.init();
@@ -107,7 +107,7 @@ var ball = {
 						$.msgBox({ 
 							type: "error",
 							title: "Ball fallen!!!",
-							content: "Try again??",
+							content: "<p>Try again??</p>",
 							buttons: [{ value: "Yes" },{ value: "No" }],
 							success: function (result) {
 								if(result == "Yes"){
@@ -205,7 +205,7 @@ var bricks = {
 						$.msgBox({ 
 							type: "info",
 							title: "Congratulations",
-							content: "You passed the training succesfully! </br> Now you can procceed to the main game!!  </br></br>",
+							content: "<p>You passed the training succesfully!</p> </br> <p>Now you can procceed to the main game!!</p> </br>",
 							buttons: [{ value: "Ok" }],
 							success: function (result) {
 								window.location.replace("game.html");									
